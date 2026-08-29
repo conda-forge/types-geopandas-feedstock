@@ -1,0 +1,47 @@
+schema_version: 1
+
+context:
+  version: "1.1.4.20260807"
+
+package:
+  name: types-geopandas
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/t/types-geopandas/types_geopandas-${{ version }}.tar.gz
+  sha256: e7cbf93306473421ba7da82481124a96a81ac219acf6c5381d701f2508d27358
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - setuptools >=77.0.3
+    - pip
+  run:
+    - python >=${{ python_min }}
+    - types-shapely
+    - numpy >=1.20
+    - pandas-stubs
+    - pyproj
+
+tests:
+  - requirements:
+      run:
+        - pip
+        - python ${{ python_min }}.*
+    script:
+      - pip check
+
+about:
+  summary: Typing stubs for geopandas
+  license: Apache-2.0
+  license_file: LICENSE
+  homepage: https://github.com/python/typeshed
+
+extra:
+  recipe-maintainers:
+    - p-vdp
