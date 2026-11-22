@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "1.2.0.20261107"
+  version: "1.2.0.20261122"
 
 package:
   name: types-geopandas
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/t/types-geopandas/types_geopandas-${{ version }}.tar.gz
-  sha256: 3494457e9f9a21462812390ce271af8660a1061d7d503171d94d212e8b7df1e1
+  sha256: bbb34ba329b9b4cd4242dad35f39dea96feffa2b423406a2aead18bb074006f4
 
 build:
   number: 0
